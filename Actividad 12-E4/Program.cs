@@ -20,9 +20,9 @@ switch (opcion)
             {
                 case 1:
                     {
-                        Console.Write("¿Persistencia detectada? (S/N): ");
+                        Console.WriteLine("¿Persistencia detectada? (S/N): ");
                         string persistencia = Console.ReadLine().ToUpper();
-                        Console.Write("Número de usuarios afectados: ");
+                        Console.WriteLine("Número de usuarios afectados: ");
                         int usuarios = int.Parse(Console.ReadLine());
                         Console.WriteLine("Nivel de vaidacion: (1-4)");
                         string validacion= Console.ReadLine();
