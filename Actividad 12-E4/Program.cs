@@ -20,6 +20,48 @@ switch (opcion)
             {
                 case 1:
                     {
+                        Console.Write("¿Persistencia detectada? (S/N): ");
+                        string persistencia = Console.ReadLine().ToUpper();
+                        Console.Write("Número de usuarios afectados: ");
+                        int usuarios = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Nivel de vaidacion: (1-4)");
+                        string validacion= Console.ReadLine();
+                        string severidad;
+                        if (validacion =="1")
+                        {
+                            severidad = "Baja";
+                        }
+                        else 
+                        {
+                            if (validacion == "2")
+                            {
+                                severidad = "Media";
+                            }
+                            else if (validacion == "3")
+                            {
+                                severidad = "Alta";
+                            }
+                            else
+                            {
+                                severidad = "Critica";
+                            }
+                        }
+                        string recomendacion;
+                        if (usuarios < 5 && validacion == "1")
+                        { 
+                            recomendacion= "Soporte tecnico";
+                        }
+                        else if (usuarios >= 50 && validacion == "3")
+                        {
+                            recomendacion = "Bloqueo";
+                        }
+                        else
+                        {
+                            recomendacion = "Monitoreo";
+                        }
+                        Console.WriteLine($"RESULTADO DEL ANÁLISIS:");
+                        Console.WriteLine($"Severidad: {severidad}");
+                        Console.WriteLine($"Respuesta Sugerida: {recomendacion}");
                         break;
                     }
                 case 2:
